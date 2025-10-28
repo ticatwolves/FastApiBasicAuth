@@ -1,11 +1,8 @@
 name: Tests (pytest)
 
-
 on:
   pull_request:
-    types: [closed]
-  push:
-    branches: ["main"]
+    types: [opened, synchronize, reopened]
 
 jobs:
   pytest-on-merge:
@@ -21,7 +18,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-        ref: ${{ github.event.pull_request.merge_commit_sha }}
+          ref: ${{ github.event.pull_request.merge_commit_sha }}
 
       - name: Checkout for push to main
         if: github.event_name == 'push'
