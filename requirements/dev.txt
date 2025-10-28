@@ -1,0 +1,7 @@
+-r base.txt
+conventional-pre-commit==4.2.0
+pip-audit==2.9.0
+pre-commit==4.3.0
+pytest==8.4.2
+ruff==0.12.12
+python-semantic-release==10.4.0

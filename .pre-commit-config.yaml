@@ -1,0 +1,24 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.12.12
+    hooks:
+      - id: ruff-check
+        args: [ --fix ]
+      - id: ruff-format
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-yaml
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: debug-statements
+      - id: detect-aws-credentials
+      - id: forbid-new-submodules
+      - id: requirements-txt-fixer
+  - repo: https://github.com/pypa/pip-audit
+    rev: v2.9.0
+    hooks:
+      -   id: pip-audit
+          args: ["-r", "requirements/production.txt"]
