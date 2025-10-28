@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling", "hatch-requirements-txt"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fastapi-basic-auth"
+version = "0.1.0"
+description = "A FastAPI starter kit with authentication, user management, and profiles."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dynamic = ["dependencies"]
+
+[tool.hatch.metadata.hooks.requirements_txt]
+files = ["requirements/prod.txt"]
+
+[project.urls]
+Homepage = "https://github.com/ticatwolves/FastApiBasicAuth"
+Documentation = "https://github.com/ticatwolves/FastApiBasicAuth"
+Repository = "https://github.com/ticatwolves/FastApiBasicAuth/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/fastapi_basic_auth"]
+
+[tool.semantic_release]
+version_variable = "pyproject.toml:project.version"
+version_source = "tag"
+upload_to_pypi = true
