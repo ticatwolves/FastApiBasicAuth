@@ -27,6 +27,8 @@ jobs:
           ruff check . --fix || true
       - name: Commit & push fixes
         run: |
+          git config user.name "ticatwolves"
+          git config user.email "ticatwolves@gmail.com"
           git add -A
           if ! git diff --cached --quiet; then
             git commit -m "style: ruff autoformat"
