@@ -68,7 +68,6 @@ jobs:
           python -m build
 
       - name: Publish to TestPyPI
-        if: ${{ secrets.TEST_PYPI_API_TOKEN != '' }}
         env:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.TEST_PYPI_API_TOKEN }}
