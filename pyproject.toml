@@ -25,4 +25,10 @@ packages = ["src/fastapi_basic_auth"]
 [tool.semantic_release]
 version_variable = "pyproject.toml:project.version"
 version_source = "tag"
-upload_to_pypi = true
+branch = "main"
+changelog_file = "CHANGELOG.md"
+commit_message = "chore(release): v{version}"
+tag_commit = true
+upload_to_pypi = false
+commit_version_number = true
+hvcs = "github"
